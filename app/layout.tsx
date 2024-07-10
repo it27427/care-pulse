@@ -22,7 +22,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang='en'>
+    <html lang='en' className='dark' style={{ colorScheme: 'dark' }}>
       <body
         className={cn(
           'min-h-screen bg-dark-300 font-sans antialiased',
