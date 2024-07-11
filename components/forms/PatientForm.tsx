@@ -4,17 +4,19 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { Form } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import CustomFormField from '@/components/CustomFormField';
+
+export enum FormFieldType {
+  INPUT = 'input',
+  TEXTAREA = 'textarea',
+  PHONE_INPUT = 'tel',
+  CHECKBOX = 'checkbox',
+  DATE_PICKER = 'datepicker',
+  SELECT = 'select',
+  SKELETON = 'skeleton',
+}
 
 const formSchema = z.object({
   username: z.string().min(3, {
@@ -47,22 +49,17 @@ const PatientForm = () => {
               Schedule your first appointment.
             </p>
           </section>
-          <FormField
+
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
             control={form.control}
-            name='username'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder='shadcn' {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
+            name='name'
+            lebel='Full Name'
+            placeholder='John Doe'
+            iconSrc='/assets/icons/user.svg'
+            iconAlt='user'
           />
+
           <Button type='submit'>Submit</Button>
         </form>
       </Form>
