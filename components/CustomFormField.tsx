@@ -25,7 +25,7 @@ interface CustomProps {
   dateFormat?: string;
   shotTimeSelect?: boolean;
   children?: React.ReactNode;
-  renderSkeleton?: (field: any) => React.Node;
+  renderSkeleton?: (field: any) => React.ReactNode;
 }
 
 const CustomFormField = ({
@@ -43,8 +43,9 @@ const CustomFormField = ({
       name={name}
       render={({ field }) => (
         <FormItem className='flex-1'>
-          {fieldType !== FormFieldType.CHECKBOX &&
-            label(<FormLabel>{label}</FormLabel>)}
+          {fieldType !== FormFieldType.CHECKBOX && label && (
+            <FormLabel>{label}</FormLabel>
+          )}
         </FormItem>
       )}
     />
