@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { FormFieldType } from '@/components/forms/PatientForm';
+import React from 'react';
 
 interface CustomProps {
   control: Control<any>;
@@ -20,6 +21,10 @@ interface CustomProps {
   placeholder?: string;
   iconSrc?: string;
   iconAlt?: string;
+  disabled?: boolean;
+  dateFormat?: string;
+  shotTimeSelect?: boolean;
+  children: React.ReactNode;
 }
 
 const CustomFormField = ({
