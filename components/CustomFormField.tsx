@@ -17,9 +17,20 @@ interface CustomProps {
   fieldType: FormFieldType;
   name: string;
   label?: string;
+  placeholder?: string;
+  iconSrc?: string;
+  iconAlt?: string;
 }
 
-const CustomFormField = ({ control, fieldType, name, label }: CustomProps) => {
+const CustomFormField = ({
+  control,
+  fieldType,
+  name,
+  label,
+  placeholder,
+  iconSrc,
+  iconAlt,
+}: CustomProps) => {
   return (
     <FormField
       control={control}
