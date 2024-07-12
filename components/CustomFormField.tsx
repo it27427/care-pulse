@@ -24,7 +24,8 @@ interface CustomProps {
   disabled?: boolean;
   dateFormat?: string;
   shotTimeSelect?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  renderSkeleton?: (field: any) => React.Node;
 }
 
 const CustomFormField = ({
