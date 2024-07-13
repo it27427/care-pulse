@@ -28,7 +28,16 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const RenderInput = () => {};
+const RenderInput = () => {
+  return (
+    <Input
+      type='text'
+      placeholder='John Doe'
+      iconSrc='/images/icons/user.svg'
+      iconAlt='User'
+    />
+  );
+};
 
 const CustomFormField = ({
   control,
