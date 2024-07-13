@@ -28,6 +28,8 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
+const RenderInput = () => {};
+
 const CustomFormField = ({
   control,
   fieldType,
