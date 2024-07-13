@@ -12,6 +12,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { FormFieldType } from '@/components/forms/PatientForm';
 import React from 'react';
+import Image from 'next/image';
 
 interface CustomProps {
   control: Control<any>;
@@ -29,7 +30,30 @@ interface CustomProps {
 }
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
-  return <Input type='text' placeholder='John Doe' />;
+  // return <Input type='text' placeholder='John Doe' />;
+
+  const { fieldType, iconSrc, iconAlt } = props;
+
+  switch (fieldType) {
+    case FormFieldType.INPUT:
+      return (
+        <div className='flex rounded-md border border-dark-500 bg-dark-400'>
+          {iconSrc && (
+            <Image
+              src={iconSrc}
+              alt={iconAlt || 'icon'}
+              width={24}
+              height={24}
+              priority
+            />
+          )}
+        </div>
+      );
+      break;
+
+    default:
+      break;
+  }
 };
 
 const CustomFormField = (props: CustomProps) => {
