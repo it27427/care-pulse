@@ -28,7 +28,7 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const RenderInput = () => {
+const RenderField = () => {
   return (
     <Input
       type='text'
@@ -58,7 +58,7 @@ const CustomFormField = ({
             <FormLabel>{label}</FormLabel>
           )}
 
-          <RenderInput />
+          <RenderField field={field} />
         </FormItem>
       )}
     />
