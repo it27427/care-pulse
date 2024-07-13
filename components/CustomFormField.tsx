@@ -1,5 +1,5 @@
 'use client';
-import { Control } from 'react-hook-form';
+import { Control, Form } from 'react-hook-form';
 
 import {
   FormControl,
@@ -30,9 +30,7 @@ interface CustomProps {
 }
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
-  // return <Input type='text' placeholder='John Doe' />;
-
-  const { fieldType, iconSrc, iconAlt } = props;
+  const { fieldType, iconSrc, iconAlt, placeholder } = props;
 
   switch (fieldType) {
     case FormFieldType.INPUT:
@@ -45,8 +43,17 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
               width={24}
               height={24}
               priority
+              className='ml-2'
             />
           )}
+
+          <FormControl>
+            <Input
+              placeholder={placeholder}
+              {...field}
+              className='shad-input border-0'
+            />
+          </FormControl>
         </div>
       );
       break;
