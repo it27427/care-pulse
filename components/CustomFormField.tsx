@@ -39,15 +39,10 @@ const RenderField = () => {
   );
 };
 
-const CustomFormField = ({
-  control,
-  fieldType,
-  name,
-  label,
-  placeholder,
-  iconSrc,
-  iconAlt,
-}: CustomProps) => {
+const CustomFormField = (props: CustomProps) => {
+  const { control, fieldType, name, label, placeholder, iconSrc, iconAlt } =
+    props;
+
   return (
     <FormField
       control={control}
@@ -58,7 +53,7 @@ const CustomFormField = ({
             <FormLabel>{label}</FormLabel>
           )}
 
-          <RenderField field={field} />
+          <RenderField field={field} props={props} />
         </FormItem>
       )}
     />
