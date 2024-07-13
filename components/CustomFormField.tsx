@@ -57,6 +57,8 @@ const CustomFormField = ({
           {fieldType !== FormFieldType.CHECKBOX && label && (
             <FormLabel>{label}</FormLabel>
           )}
+
+          <RenderInput />
         </FormItem>
       )}
     />
