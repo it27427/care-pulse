@@ -28,15 +28,8 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode;
 }
 
-const RenderField = () => {
-  return (
-    <Input
-      type='text'
-      placeholder='John Doe'
-      iconSrc='/images/icons/user.svg'
-      iconAlt='User'
-    />
-  );
+const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
+  return <Input type='text' placeholder='John Doe' />;
 };
 
 const CustomFormField = (props: CustomProps) => {
@@ -54,6 +47,8 @@ const CustomFormField = (props: CustomProps) => {
           )}
 
           <RenderField field={field} props={props} />
+
+          <FormMessage />
         </FormItem>
       )}
     />
