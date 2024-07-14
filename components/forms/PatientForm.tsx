@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { Form } from '@/components/ui/form';
-import { Button } from '@/components/ui/button';
 import CustomFormField from '@/components/CustomFormField';
 import SubmitButton from '@/components/SubmitButton';
 import { useState } from 'react';
@@ -20,19 +19,15 @@ export enum FormFieldType {
   SKELETON = 'skeleton',
 }
 
-const formSchema = z.object({
-  username: z.string().min(3, {
-    message: 'Username must be at least 3 characters.',
-  }),
-});
-
 const PatientForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: '',
+      name: '',
+      email: '',
+      phone: '',
     },
   });
 

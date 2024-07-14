@@ -1,0 +1,16 @@
+import { z } from 'zod';
+
+export const UserFormValidation = z.object({
+  username: z
+    .string()
+    .min(3, 'Name must be at least 3 characters.')
+    .max(50, 'Name must be less than 50 characters.'),
+
+  email: z.string().email('Invalid email address.'),
+  phone: z
+    .string()
+    .refine(
+      (phone) => /^\+?[0-9]\d(1,14)$/.test(phone),
+      'Invalid phone number'
+    ),
+});
