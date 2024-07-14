@@ -37,7 +37,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   switch (fieldType) {
     case FormFieldType.INPUT:
       return (
-        <div className='flex rounded-md border border-dark-500 bg-dark-400'>
+        <div className='flex items-center rounded-md border border-dark-500 bg-dark-400'>
           {iconSrc && (
             <Image
               src={iconSrc}
@@ -45,7 +45,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
               width={24}
               height={24}
               priority
-              className='ml-2'
+              className='ml-2 w-6 h-6'
             />
           )}
 

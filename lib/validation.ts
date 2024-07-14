@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const UserFormValidation = z.object({
-  username: z
+  name: z
     .string()
     .min(3, 'Name must be at least 3 characters.')
     .max(50, 'Name must be less than 50 characters.'),
@@ -10,7 +10,7 @@ export const UserFormValidation = z.object({
   phone: z
     .string()
     .refine(
-      (phone) => /^\+?[0-9]\d(1,14)$/.test(phone),
+      (phone) => /(^([+]{1}[8]{2}|0088)?(01){1}[3-9]{1}\d{8})$/.test(phone),
       'Invalid phone number'
     ),
 });
