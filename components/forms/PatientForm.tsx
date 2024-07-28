@@ -57,10 +57,10 @@ const PatientForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 flex-1'>
-        <section className='mb-12 space-y-4'>
+        <header className='mb-12 space-y-4'>
           <h1 className='m-0 header'>Hi there, 👋</h1>
           <p className='m-0 text-dark-700'>Schedule your first appointment.</p>
-        </section>
+        </header>
 
         <CustomFormField
           fieldType={FormFieldType.INPUT}
