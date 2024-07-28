@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 /* ========================================== TAILWIND STYLES */
 @layer base {
 
